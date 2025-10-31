@@ -126,49 +126,11 @@ export default function Index() {
             </div>
           </div>
 
-          {/* Right Column - Encoding Table and Generated Code */}
-          <div className="space-y-8">
-            {/* Encoding Table */}
-            <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                Tabla de Codificación
-              </h2>
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b-2 border-gray-200">
-                      <th className="text-left py-3 px-4 font-bold text-gray-700 bg-gradient-to-r from-purple-50 to-transparent">
-                        Dígito
-                      </th>
-                      <th className="text-right py-3 px-4 font-bold text-gray-700 bg-gradient-to-r from-transparent to-pink-50">
-                        Código
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {Array.from({ length: 10 }, (_, i) => (
-                      <tr
-                        key={i}
-                        className="border-b border-gray-100 hover:bg-gray-50 transition"
-                      >
-                        <td className="py-3 px-4 font-semibold text-gray-800 text-lg">
-                          {i}
-                        </td>
-                        <td className="py-3 px-4 text-right">
-                          <span className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-purple-400 to-pink-400 text-white font-bold text-lg shadow-md">
-                            {encodingMap[i.toString()]}
-                          </span>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
+          {/* Right Column - Generated Code */}
+          <div className="flex items-center justify-center">
             {/* Generated Code Display */}
-            <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl shadow-lg p-8 text-white">
-              <p className="text-sm font-semibold text-purple-100 mb-2">
+            <div className="w-full bg-gradient-to-br from-green-700 to-black rounded-2xl shadow-lg p-8 text-white">
+              <p className="text-sm font-semibold text-green-100 mb-2">
                 Código Generado
               </p>
               <div className="bg-white bg-opacity-10 backdrop-blur rounded-xl p-6 mb-6">
@@ -176,14 +138,14 @@ export default function Index() {
                   {generatedCode}
                 </p>
               </div>
-              <p className="text-sm text-purple-100 text-center mb-6">
+              <p className="text-sm text-green-100 text-center mb-6">
                 Desde: {String(selectedDate.getDate()).padStart(2, "0")}
                 {String(selectedDate.getMonth() + 1).padStart(2, "0")}
                 {selectedDate.getFullYear()}
               </p>
               <button
                 onClick={copyToClipboard}
-                className="w-full flex items-center justify-center gap-2 bg-white text-purple-600 font-bold py-3 rounded-lg hover:bg-purple-50 transition transform hover:scale-105 active:scale-95"
+                className="w-full flex items-center justify-center gap-2 bg-white text-green-700 font-bold py-3 rounded-lg hover:bg-green-50 transition transform hover:scale-105 active:scale-95"
               >
                 {copied ? (
                   <>
