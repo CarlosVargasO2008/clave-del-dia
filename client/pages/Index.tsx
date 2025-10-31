@@ -46,13 +46,13 @@ export default function Index() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-4 sm:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-gray-50 p-4 sm:p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Calendar className="w-10 h-10 text-purple-600" />
-            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <Calendar className="w-10 h-10 text-green-700" />
+            <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-green-700 to-black bg-clip-text text-transparent">
               Generador de Códigos
             </h1>
           </div>
