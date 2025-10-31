@@ -78,7 +78,7 @@ export default function Index() {
                 type="date"
                 value={selectedDate.toISOString().split("T")[0]}
                 onChange={handleDateChange}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-purple-500 transition text-gray-800 bg-gray-50"
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-green-500 transition text-gray-800 bg-gray-50"
               />
             </div>
 
