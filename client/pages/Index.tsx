@@ -83,11 +83,11 @@ export default function Index() {
             </div>
 
             {/* Date Display */}
-            <div className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-6 mb-8">
+            <div className="bg-gradient-to-r from-green-100 to-green-50 rounded-xl p-6 mb-8">
               <p className="text-sm text-gray-600 font-medium mb-2">
                 Fecha Seleccionada
               </p>
-              <p className="text-2xl font-bold text-purple-700 capitalize">
+              <p className="text-2xl font-bold text-green-700 capitalize">
                 {formattedDate}
               </p>
             </div>
