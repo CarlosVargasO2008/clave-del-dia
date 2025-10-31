@@ -102,7 +102,7 @@ export default function Index() {
                   <p className="text-gray-600 text-xs font-semibold mb-2">
                     DÍA
                   </p>
-                  <p className="text-2xl font-bold text-purple-600">
+                  <p className="text-2xl font-bold text-green-600">
                     {String(selectedDate.getDate()).padStart(2, "0")}
                   </p>
                 </div>
@@ -110,7 +110,7 @@ export default function Index() {
                   <p className="text-gray-600 text-xs font-semibold mb-2">
                     MES
                   </p>
-                  <p className="text-2xl font-bold text-pink-600">
+                  <p className="text-2xl font-bold text-green-700">
                     {String(selectedDate.getMonth() + 1).padStart(2, "0")}
                   </p>
                 </div>
@@ -118,7 +118,7 @@ export default function Index() {
                   <p className="text-gray-600 text-xs font-semibold mb-2">
                     AÑO
                   </p>
-                  <p className="text-2xl font-bold text-blue-600">
+                  <p className="text-2xl font-bold text-gray-800">
                     {selectedDate.getFullYear()}
                   </p>
                 </div>
