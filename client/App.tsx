@@ -9,6 +9,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InitialScreen from "./pages/InitialScreen";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import TrialExpired from "./pages/TrialExpired";
+import { useTrialExpiration } from "./hooks/use-trial-expiration";
 
 const queryClient = new QueryClient();
 
