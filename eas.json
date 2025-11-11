@@ -1,0 +1,30 @@
+{
+  "cli": {
+    "version": ">= 16.26.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+      "distribution": "store"
+    },
+    "release": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "useCredentialsFromMetadataService": true
+      },
+      "ios": {
+        "simulator": false
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
