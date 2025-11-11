@@ -10,6 +10,25 @@ export interface TrialStatus {
   expirationDate: string | null;
 }
 
+// Safe localStorage access
+function getFromStorage(key: string): string | null {
+  try {
+    return typeof window !== 'undefined' ? localStorage.getItem(key) : null;
+  } catch {
+    return null;
+  }
+}
+
+function setInStorage(key: string, value: string): void {
+  try {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(key, value);
+    }
+  } catch {
+    // Storage not available, continue without persisting
+  }
+}
+
 export function useTrialExpiration(): TrialStatus {
   const [status, setStatus] = useState<TrialStatus>({
     isExpired: false,
@@ -19,7 +38,7 @@ export function useTrialExpiration(): TrialStatus {
   });
 
   useEffect(() => {
-    const storedInstallDate = localStorage.getItem(INSTALL_DATE_KEY);
+    const storedInstallDate = getFromStorage(INSTALL_DATE_KEY);
     const now = new Date();
     const todayString = now.toISOString().split('T')[0];
 
@@ -30,7 +49,7 @@ export function useTrialExpiration(): TrialStatus {
       // First time opening the app - set installation date
       installDate = now;
       installDateString = todayString;
-      localStorage.setItem(INSTALL_DATE_KEY, installDateString);
+      setInStorage(INSTALL_DATE_KEY, installDateString);
     } else {
       // App was already installed
       installDateString = storedInstallDate;
