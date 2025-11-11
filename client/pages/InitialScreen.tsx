@@ -12,7 +12,11 @@ export default function InitialScreen() {
     <div className="min-h-screen bg-gradient-to-br from-green-950 via-black to-green-900 flex items-center justify-center p-4">
       <div className="flex flex-col items-center justify-center gap-8 max-w-md">
         <div className="text-center space-y-4">
-          <h1 className="text-5xl font-bold text-green-400">ORIOL</h1>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F4a0d784e314c403f81cd8a523edd9468%2F0905fb710d3d4286aaeef0dafc1e9c3f?format=webp&width=800"
+            alt="ORIOL"
+            className="w-48 h-48 mx-auto"
+          />
           <p className="text-xl text-gray-300">Generador de Códigos Inteligente</p>
           <p className="text-gray-400 text-sm">Transforma fechas en códigos únicos usando nuestro sistema de codificación avanzado</p>
         </div>
