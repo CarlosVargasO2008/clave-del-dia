@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "Clave del Día",
+    "slug": "clave-del-dia",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "https://cdn.builder.io/api/v1/image/assets%2F4a0d784e314c403f81cd8a523edd9468%2F0905fb710d3d4286aaeef0dafc1e9c3f?format=webp&width=1024",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "https://cdn.builder.io/api/v1/image/assets%2F4a0d784e314c403f81cd8a523edd9468%2F0905fb710d3d4286aaeef0dafc1e9c3f?format=webp&width=1024",
+      "resizeMode": "contain",
+      "backgroundColor": "#22c55e"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTabletMode": true,
+      "bundleIdentifier": "com.clavedeldia.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "https://cdn.builder.io/api/v1/image/assets%2F4a0d784e314c403f81cd8a523edd9468%2F0905fb710d3d4286aaeef0dafc1e9c3f?format=webp&width=1024",
+        "backgroundColor": "#22c55e"
+      },
+      "package": "com.clavedeldia.app",
+      "permissions": []
+    },
+    "web": {
+      "favicon": "https://cdn.builder.io/api/v1/image/assets%2F4a0d784e314c403f81cd8a523edd9468%2F0905fb710d3d4286aaeef0dafc1e9c3f?format=webp&width=32",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "https://cdn.builder.io/api/v1/image/assets%2F4a0d784e314c403f81cd8a523edd9468%2F0905fb710d3d4286aaeef0dafc1e9c3f?format=webp&width=1024",
+          "resizeMode": "contain",
+          "backgroundColor": "#22c55e"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "clave-del-dia"
+      }
+    }
+  }
+}
