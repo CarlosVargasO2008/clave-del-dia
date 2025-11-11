@@ -11,6 +11,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import TrialExpired from "./pages/TrialExpired";
 import { useTrialExpiration } from "./hooks/use-trial-expiration";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 
