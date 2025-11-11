@@ -24,7 +24,7 @@ export default function InitialScreen() {
         <div className="w-full pt-8">
           <button
             onClick={handleNavigate}
-            className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+            className="w-full bg-white hover:bg-gray-100 text-green-700 font-bold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Comenzar
             <ArrowRight size={20} />
