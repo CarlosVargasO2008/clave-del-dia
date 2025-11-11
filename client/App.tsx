@@ -14,7 +14,13 @@ import { useTrialExpiration } from "./hooks/use-trial-expiration";
 
 const queryClient = new QueryClient();
 
-function App() {
+function AppWrapper() {
+  const trialStatus = useTrialExpiration();
+
+  if (trialStatus.isExpired) {
+    return <TrialExpired expirationDate={trialStatus.expirationDate} />;
+  }
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -34,4 +40,4 @@ function App() {
 }
 
 const root = createRoot(document.getElementById("root")!);
-root.render(<App />);
+root.render(<AppWrapper />);
