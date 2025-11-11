@@ -18,6 +18,15 @@ const queryClient = new QueryClient();
 function AppWrapper() {
   const trialStatus = useTrialExpiration();
 
+  useEffect(() => {
+    // Register service worker for PWA functionality
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {
+        // Service worker registration failed, app will still work
+      });
+    }
+  }, []);
+
   if (trialStatus.isExpired) {
     return <TrialExpired expirationDate={trialStatus.expirationDate} />;
   }
