@@ -32,17 +32,17 @@ export default function InitialScreen() {
         </div>
 
         <div className="grid grid-cols-3 gap-4 w-full pt-8 text-center">
-          <div className="bg-green-900/30 rounded-lg p-4">
-            <div className="text-2xl font-bold text-green-400">📅</div>
-            <p className="text-xs text-gray-400 mt-2">Selecciona Fecha</p>
+          <div className="bg-white/20 backdrop-blur rounded-lg p-4">
+            <div className="text-2xl font-bold">📅</div>
+            <p className="text-xs text-white mt-2">Selecciona Fecha</p>
           </div>
-          <div className="bg-green-900/30 rounded-lg p-4">
-            <div className="text-2xl font-bold text-green-400">🔄</div>
-            <p className="text-xs text-gray-400 mt-2">Genera Código</p>
+          <div className="bg-white/20 backdrop-blur rounded-lg p-4">
+            <div className="text-2xl font-bold">🔄</div>
+            <p className="text-xs text-white mt-2">Genera Código</p>
           </div>
-          <div className="bg-green-900/30 rounded-lg p-4">
-            <div className="text-2xl font-bold text-green-400">✨</div>
-            <p className="text-xs text-gray-400 mt-2">Copia Resultado</p>
+          <div className="bg-white/20 backdrop-blur rounded-lg p-4">
+            <div className="text-2xl font-bold">✨</div>
+            <p className="text-xs text-white mt-2">Copia Resultado</p>
           </div>
         </div>
       </div>
