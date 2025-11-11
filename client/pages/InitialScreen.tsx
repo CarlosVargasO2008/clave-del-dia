@@ -9,7 +9,7 @@ export default function InitialScreen() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-950 via-black to-green-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-green-500 via-green-400 to-green-600 flex items-center justify-center p-4">
       <div className="flex flex-col items-center justify-center gap-8 max-w-md">
         <div className="text-center space-y-4">
           <img
