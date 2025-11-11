@@ -29,7 +29,8 @@ export default function Index() {
   const generatedCode = generateCode(selectedDate);
 
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedDate(new Date(e.target.value));
+    const [year, month, day] = e.target.value.split('-');
+    setSelectedDate(new Date(parseInt(year), parseInt(month) - 1, parseInt(day)));
   };
 
   const copyToClipboard = () => {
