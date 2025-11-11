@@ -39,5 +39,8 @@ function AppWrapper() {
   );
 }
 
-const root = createRoot(document.getElementById("root")!);
-root.render(<AppWrapper />);
+const rootElement = document.getElementById("root");
+if (rootElement && !rootElement.hasChildNodes()) {
+  const root = createRoot(rootElement);
+  root.render(<AppWrapper />);
+}
