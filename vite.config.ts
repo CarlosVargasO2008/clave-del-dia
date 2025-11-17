@@ -5,7 +5,7 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: process.env.VITE_BASE || "/",
+  base: "/clave-del-dia/",
   server: {
     host: "::",
     port: 8080,
