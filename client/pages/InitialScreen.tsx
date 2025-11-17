@@ -17,8 +17,13 @@ export default function InitialScreen() {
             alt="ORIOL"
             className="w-48 h-48 mx-auto drop-shadow-lg"
           />
-          <p className="text-xl text-white font-semibold">Generador de Códigos Inteligente</p>
-          <p className="text-white/80 text-sm">Transforma fechas en códigos únicos usando nuestro sistema de codificación avanzado</p>
+          <p className="text-xl text-white font-semibold">
+            Generador de Códigos Inteligente
+          </p>
+          <p className="text-white/80 text-sm">
+            Transforma fechas en códigos únicos usando nuestro sistema de
+            codificación avanzado
+          </p>
         </div>
 
         <div className="w-full pt-8">

@@ -1,11 +1,11 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: 'com.clavedeldia.app',
-  appName: 'Clave del Día',
-  webDir: 'dist/spa',
+  appId: "com.clavedeldia.app",
+  appName: "Clave del Día",
+  webDir: "dist/spa",
   server: {
-    androidScheme: 'https'
+    androidScheme: "https",
   },
   plugins: {
     SplashScreen: {

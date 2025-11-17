@@ -23,14 +23,19 @@ export default function Index() {
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const year = date.getFullYear();
     const dateString = day + month + year;
-    return dateString.split("").map((digit) => encodingMap[digit]).join("");
+    return dateString
+      .split("")
+      .map((digit) => encodingMap[digit])
+      .join("");
   };
 
   const generatedCode = generateCode(selectedDate);
 
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const [year, month, day] = e.target.value.split('-');
-    setSelectedDate(new Date(parseInt(year), parseInt(month) - 1, parseInt(day)));
+    const [year, month, day] = e.target.value.split("-");
+    setSelectedDate(
+      new Date(parseInt(year), parseInt(month) - 1, parseInt(day)),
+    );
   };
 
   const copyToClipboard = () => {
@@ -177,7 +182,9 @@ export default function Index() {
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold text-gray-800">Selecciona Fecha</h4>
+                <h4 className="font-semibold text-gray-800">
+                  Selecciona Fecha
+                </h4>
                 <p className="text-sm text-gray-600 mt-1">
                   Elige una fecha del calendario
                 </p>

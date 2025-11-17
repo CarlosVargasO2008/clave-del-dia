@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-const INSTALL_DATE_KEY = 'clave_del_dia_install_date';
+const INSTALL_DATE_KEY = "clave_del_dia_install_date";
 const TRIAL_DAYS = 15;
 
 export interface TrialStatus {
@@ -13,7 +13,7 @@ export interface TrialStatus {
 // Safe localStorage access
 function getFromStorage(key: string): string | null {
   try {
-    return typeof window !== 'undefined' ? localStorage.getItem(key) : null;
+    return typeof window !== "undefined" ? localStorage.getItem(key) : null;
   } catch {
     return null;
   }
@@ -21,7 +21,7 @@ function getFromStorage(key: string): string | null {
 
 function setInStorage(key: string, value: string): void {
   try {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       localStorage.setItem(key, value);
     }
   } catch {
@@ -40,7 +40,7 @@ export function useTrialExpiration(): TrialStatus {
   useEffect(() => {
     const storedInstallDate = getFromStorage(INSTALL_DATE_KEY);
     const now = new Date();
-    const todayString = now.toISOString().split('T')[0];
+    const todayString = now.toISOString().split("T")[0];
 
     let installDate: Date;
     let installDateString: string;
@@ -53,14 +53,14 @@ export function useTrialExpiration(): TrialStatus {
     } else {
       // App was already installed
       installDateString = storedInstallDate;
-      const [year, month, day] = storedInstallDate.split('-').map(Number);
+      const [year, month, day] = storedInstallDate.split("-").map(Number);
       installDate = new Date(year, month - 1, day);
     }
 
     // Calculate expiration date (15 days from installation)
     const expirationDate = new Date(installDate);
     expirationDate.setDate(expirationDate.getDate() + TRIAL_DAYS);
-    const expirationDateString = expirationDate.toISOString().split('T')[0];
+    const expirationDateString = expirationDate.toISOString().split("T")[0];
 
     // Calculate days remaining
     const timeDiff = expirationDate.getTime() - now.getTime();

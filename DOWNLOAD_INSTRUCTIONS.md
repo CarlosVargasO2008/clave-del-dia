@@ -7,12 +7,14 @@ La aplicación está disponible como una **Progressive Web App (PWA)** que funci
 **Enlace**: [https://013a92af213c4e46bbbabd59724c01e9-29831dc092a4419f8abd0c7aa.fly.dev/](https://013a92af213c4e46bbbabd59724c01e9-29831dc092a4419f8abd0c7aa.fly.dev/)
 
 ### Instalación en Android:
+
 1. Abre el enlace en Chrome o navegador móvil
 2. Toca el menú (⋮) y selecciona "Instalar aplicación" o "Agregar a pantalla de inicio"
 3. Elige un nombre y toca "Instalar"
 4. La aplicación se instalará como una app nativa
 
 ### Instalación en iOS:
+
 1. Abre el enlace en Safari
 2. Toca el botón "Compartir" (cuadro con flecha)
 3. Desplázate hacia abajo y toca "Agregar a la pantalla de inicio"
@@ -43,6 +45,7 @@ Si prefieres una aplicación nativa de Android:
 ## Soporte
 
 Si tienes problemas con la instalación o uso, por favor:
+
 1. Asegúrate de tener conexión a Internet para la descarga inicial
 2. Borra la caché del navegador si experimentas problemas
 3. Reinicia tu dispositivo si la aplicación no se instala correctamente
