@@ -25,6 +25,7 @@ https://carlosvargaso2008.github.io/clave-del-dia/
 Cada vez que hagas **push** a la rama `main` de GitHub, tu app se actualizará automáticamente.
 
 El workflow de GitHub Actions (`/.github/workflows/deploy.yml`):
+
 - ✅ Construye tu app
 - ✅ La sube a la rama `gh-pages`
 - ✅ GitHub Pages la publica automáticamente
