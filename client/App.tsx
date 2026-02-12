@@ -21,9 +21,11 @@ function AppWrapper() {
   useEffect(() => {
     // Register service worker for PWA functionality
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/sw.js").catch(() => {
-        // Service worker registration failed, app will still work
-      });
+      navigator.serviceWorker
+        .register(`${import.meta.env.BASE_URL}sw.js`)
+        .catch(() => {
+          // Service worker registration failed, app will still work
+        });
     }
   }, []);
 

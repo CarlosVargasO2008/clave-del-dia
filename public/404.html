@@ -5,7 +5,7 @@
     <title>Clave del Día</title>
     <script>
       var l = window.location;
-      sessionStorage.redirect = l.pathname + l.search + l.hash;
+      sessionStorage.setItem("redirect", l.pathname + l.search + l.hash);
     </script>
     <meta http-equiv="refresh" content="0; url=/clave-del-dia/" />
   </head>

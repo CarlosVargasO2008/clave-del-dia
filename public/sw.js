@@ -1,5 +1,11 @@
-const CACHE_NAME = "clave-del-dia-v1";
-const urlsToCache = ["/", "/index.html", "/manifest.json"];
+const CACHE_NAME = "clave-del-dia-v2";
+
+const basePath = new URL(self.registration.scope).pathname.replace(/\/$/, "");
+const urlsToCache = [
+  `${basePath}/`,
+  `${basePath}/index.html`,
+  `${basePath}/manifest.json`,
+];
 
 // Install event
 self.addEventListener("install", (event) => {
@@ -45,7 +51,7 @@ self.addEventListener("fetch", (event) => {
         })
         .catch(() => {
           // Return cached response or a fallback
-          return caches.match("/index.html");
+          return caches.match(`${basePath}/index.html`);
         });
     }),
   );
