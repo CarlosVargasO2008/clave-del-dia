@@ -36,7 +36,7 @@ function AppWrapper() {
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/clave-del-dia">
           <Routes>
             <Route path="/" element={<InitialScreen />} />
             <Route path="/app" element={<Index />} />
