@@ -89,46 +89,13 @@ export default function Index() {
             </div>
 
             {/* Date Display */}
-            <div className="bg-gradient-to-r from-green-100 to-green-50 rounded-xl p-6 mb-8">
+            <div className="bg-gradient-to-r from-green-100 to-green-50 rounded-xl p-6">
               <p className="text-sm text-gray-600 font-medium mb-2">
                 Fecha Seleccionada
               </p>
               <p className="text-2xl font-bold text-green-700 capitalize">
                 {formattedDate}
               </p>
-            </div>
-
-            {/* Date Breakdown */}
-            <div className="bg-gray-50 rounded-xl p-6">
-              <p className="text-sm font-semibold text-gray-700 mb-4">
-                Desglose de la Fecha
-              </p>
-              <div className="grid grid-cols-3 gap-4">
-                <div className="bg-white rounded-lg p-4 text-center border-2 border-gray-200">
-                  <p className="text-gray-600 text-xs font-semibold mb-2">
-                    DÍA
-                  </p>
-                  <p className="text-2xl font-bold text-green-600">
-                    {String(selectedDate.getDate()).padStart(2, "0")}
-                  </p>
-                </div>
-                <div className="bg-white rounded-lg p-4 text-center border-2 border-gray-200">
-                  <p className="text-gray-600 text-xs font-semibold mb-2">
-                    MES
-                  </p>
-                  <p className="text-2xl font-bold text-green-700">
-                    {String(selectedDate.getMonth() + 1).padStart(2, "0")}
-                  </p>
-                </div>
-                <div className="bg-white rounded-lg p-4 text-center border-2 border-gray-200">
-                  <p className="text-gray-600 text-xs font-semibold mb-2">
-                    AÑO
-                  </p>
-                  <p className="text-2xl font-bold text-gray-800">
-                    {selectedDate.getFullYear()}
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -169,55 +136,6 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Footer Info */}
-        <div className="mt-12 bg-white rounded-2xl shadow-lg p-8">
-          <h3 className="text-xl font-bold text-gray-800 mb-4">
-            ¿Cómo Funciona?
-          </h3>
-          <div className="grid sm:grid-cols-3 gap-6">
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-green-100 text-green-700 font-bold">
-                  1
-                </div>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-800">
-                  Selecciona Fecha
-                </h4>
-                <p className="text-sm text-gray-600 mt-1">
-                  Elige una fecha del calendario
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-green-100 text-green-700 font-bold">
-                  2
-                </div>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-800">Obtén Dígitos</h4>
-                <p className="text-sm text-gray-600 mt-1">
-                  Se extrae el formato DDMMYYYY
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-green-100 text-green-700 font-bold">
-                  3
-                </div>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-800">Genera Código</h4>
-                <p className="text-sm text-gray-600 mt-1">
-                  Convierte usando la tabla de codificación
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
