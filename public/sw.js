@@ -1,22 +1,19 @@
-const CACHE_NAME = "clave-del-dia-v3";
+const CACHE_NAME = "clave-del-dia-v4";
 
-const basePath = new URL(self.registration.scope).pathname.replace(/\/$/, "");
-
-// Install event - skip waiting to update immediately
-self.addEventListener("install", (event) => {
+// Install - clear old caches and skip waiting
+self.addEventListener("install", () => {
   self.skipWaiting();
-  event.waitUntil(Promise.resolve());
 });
 
-// Activate event - claim all clients and clean old caches
+// Activate - claim all clients and clean old caches
 self.addEventListener("activate", (event) => {
   self.clients.claim();
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            return caches.delete(cacheName);
+        cacheNames.map((name) => {
+          if (name !== CACHE_NAME) {
+            return caches.delete(name);
           }
         }),
       );
@@ -24,49 +21,33 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-// Fetch event - Network first, then fall back to cache
+// Fetch - simple network-first approach
 self.addEventListener("fetch", (event) => {
-  // Skip non-GET requests
+  // Only handle GET requests
   if (event.request.method !== "GET") {
     return;
   }
 
-  // Skip chrome extensions and other non-http(s) requests
+  // Skip chrome extensions
   if (!event.request.url.startsWith("http")) {
     return;
   }
 
   event.respondWith(
-    // Try network first
     fetch(event.request)
       .then((response) => {
-        // Only cache successful responses
-        if (!response || response.status !== 200 || response.type === "error") {
-          return response;
+        // Cache successful responses
+        if (response && response.status === 200) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, clone);
+          });
         }
-
-        // Clone and cache the response
-        const responseToCache = response.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
-        });
-
         return response;
       })
       .catch(() => {
         // Network failed, try cache
-        return caches
-          .match(event.request)
-          .then((cachedResponse) => {
-            if (cachedResponse) {
-              return cachedResponse;
-            }
-            // Fallback to index.html for navigation requests
-            if (event.request.mode === "navigate") {
-              return caches.match(`${basePath}/index.html`);
-            }
-            return null;
-          });
+        return caches.match(event.request);
       }),
   );
 });

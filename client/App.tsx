@@ -21,11 +21,11 @@ function AppWrapper() {
   useEffect(() => {
     // Register service worker for PWA functionality
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register(`${import.meta.env.BASE_URL}sw.js`)
-        .catch(() => {
-          // Service worker registration failed, app will still work
-        });
+      // Register service worker from the correct path
+      const swPath = "/clave-del-dia/sw.js";
+      navigator.serviceWorker.register(swPath).catch(() => {
+        // Service worker registration failed, app will still work
+      });
     }
   }, []);
 
